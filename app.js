@@ -8,6 +8,7 @@ const port = 3000;
 
 const clientId = '3MVG9WVXk15qiz1JL1sTtS57eZC6M2jds3TXcuAOmawZh1eyq7d.aUJe_FYpYBpiGEYHAILNGj5EkDpdusOw4';
 const clientSecret = 'FEEBA31E2584AA6E7A13A51D7468EB7DBB51ED8173ABA12A1A1BB103CA6313AE';
+//const callbackUrl = 'http://localhost:3000/callback';
 const callbackUrl = 'https://node-js-api-app-production.up.railway.app/callback';
 const loginUrl = 'https://login.salesforce.com';
 const redirectUri = encodeURIComponent(callbackUrl);
@@ -38,7 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    const authUrl = `${loginUrl}/services/oauth2/authorize?`;
+    const authUrl = `${apiUrl1}/services/oauth2/authorize?`;
     const params = {
       client_id: clientId,
       redirect_uri: redirectUri,
