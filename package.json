@@ -10,8 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@node-oauth/express-oauth-server": "^4.1.1",
     "axios": "^1.7.7",
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "express-openid-client": "^1.4.0",
+    "openid-client": "^5.7.0"
   }
 }

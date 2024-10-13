@@ -1,12 +1,16 @@
 const express = require('express');
 const axios = require('axios');
 const ejs = require('ejs');
+const salesforce = require('./salesforce');
 
 const app = express();
 const port = 3000;
 
+
+
 // Set view engine to EJS
 app.set('view engine', 'ejs');
+app.use('/salesforce', salesforce);
 
 // API endpoint URL
 const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
