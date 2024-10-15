@@ -39,14 +39,17 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
+    
     const authUrl = `${apiUrl1}/services/oauth2/authorize?`;
     const params = {
       client_id: clientId,
-      redirect_uri: redirectUri,
+      redirect_uri: callbackUrl,
       response_type: 'code',
     };
     const url = authUrl + querystring.stringify(params);
+    
     res.redirect(url);
+
   });
 
   app.get('/callback', (req, res) => {
@@ -65,6 +68,7 @@ app.get('/login', (req, res) => {
     })
     .then((response) => {
       const token = response.data;
+      console.log(token);
       const accessToken = token.access_token;
       const instanceUrl = token.instance_url;
       // Use accessToken to make API calls
